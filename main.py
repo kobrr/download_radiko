@@ -82,9 +82,12 @@ def give_meta(station, title):
     date_lst = [i.get('ft')[2:8] for i in soup.findAll('prog')][:len(to_lst)]
     # program description with <br />\n
     comment_lst = [i.text.replace('\u3000','') for i in soup.findAll('desc')][:len(to_lst)] 
+    comment_lst = [re.sub(r'(　|\t|\u3000|<br />|\n)+', '', i) for i in comment_lst]
+    comment_lst = [re.sub(r'\s{1,}', ' ', i) for i in comment_lst]
     # for some stations, they give us the description in the "info" tag
     info_lst = [BeautifulSoup(i.text,"html.parser").text for i in soup.findAll('info')][:len(to_lst)]
-    info_lst = [re.sub(r'( | |\t|\u3000)*', '', i) for i in info_lst]
+    info_lst = [re.sub(r'(　|\t|\u3000|<br />|\n)+', ' ', i) for i in info_lst]
+    info_lst = [re.sub(r'\s{1,}', ' ', i) for i in info_lst]
     # join
     comment_lst = [a+b for a,b in zip(comment_lst, info_lst)]
     
@@ -111,7 +114,7 @@ def get_stations(area, station_id):
     station_name = station_name_lst[index]
     return station_name
 
-def gen_m3u8_url(url, auth_token):
+def get_m3u8_url(url, auth_token):
     """ get m3u8 which include a chunk of AAC files
     """
     headers =  {
@@ -134,7 +137,7 @@ def save(station, title, ft, to, token, mc, date, comment, station_name):
     """
     comment = comment.replace('<br>','')
     url = f"https://radiko.jp/v2/api/ts/playlist.m3u8?station_id={station}&l=15&ft={ft}&to={to}"
-    m3u8 = gen_m3u8_url(url, token)
+    m3u8 = get_m3u8_url(url, token)
     title_for_save = simple_title(title)
     filename = '{dt}_{title}'.format(dt=ft[2:8], title=title_for_save)
     # save it as AAC
