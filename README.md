@@ -1,12 +1,12 @@
 # auto_download_radiko
-ラジコの番組を録音し、番組情報や出演者・ラジオ局情報メタデータ付きのmp3ファイルとして保存できます。
-Herokuなどを利用すれば、毎週のスケジュール実行もできます。(ファイル保存はDropbox APIなどで)
+ラジコの番組を録音し、番組情報や出演者・ラジオ局情報メタデータ付きのmp3ファイルとして保存できます。<br>
+Herokuなどを利用すれば、毎週のスケジュール実行もできます。(ファイル保存はDropbox APIなどで)<br>
 
 # Output
 ![file info](https://user-images.githubusercontent.com/58103830/82830715-74aca580-9ef1-11ea-96cc-82976d919241.png)
 
 # Requirement
-ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers
+ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers<br>
 eyeD3==0.9.5
 
 python==3.7.4
