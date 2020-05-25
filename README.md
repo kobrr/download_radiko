@@ -1,6 +1,7 @@
 # auto_download_radiko
 ラジコの番組を録音し、番組情報や出演者・ラジオ局情報メタデータ付きのmp3ファイルとして保存できます。<br>
 Herokuなどを利用すれば、毎週のスケジュール実行もできます。(ファイル保存はDropbox APIなどで)<br>
+どうやら月曜日になると番組リストが更新されてしまうようなので、一週間の番組は該当週の日曜中にダウンロードしておく必要があります。<br>
 
 # Output
 ![file info](https://user-images.githubusercontent.com/58103830/82830715-74aca580-9ef1-11ea-96cc-82976d919241.png)
