@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-
 #run on 21:30 every Sunday.
 import urllib.request, urllib.error, urllib.parse
 import os, sys, re
