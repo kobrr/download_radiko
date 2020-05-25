@@ -49,7 +49,7 @@ def get_partial_key(auth_response):
     partialkey = base64.b64encode(partialkey.encode())
     return [partialkey,authtoken]
 
-def auth2(partialkey, auth_token) :
+def auth2(partialkey, auth_token):
     """ get 2nd auth
     """
     url = "https://radiko.jp/v2/api/auth2"
