@@ -80,13 +80,11 @@ def give_meta(station, title):
     ft_lst = [i.get('ft')for i in soup.findAll('prog')][:len(to_lst)]
     # program date e.g.: 200504
     date_lst = [i.get('ft')[2:8] for i in soup.findAll('prog')][:len(to_lst)]
-    # with <br />\n
-    info_lst = [re.sub(r'.+</a><br />\n<br />\n', '', i.text.replace('            ', '')) for i in soup.findAll('info')][:len(to_lst)] 
     # program description with <br />\n
     comment_lst = [i.text.replace('\u3000','') for i in soup.findAll('desc')][:len(to_lst)] 
     # for some stations, they give us the description in the "info" tag
-    info_lst = [BeautifulSoup(i.text,"html.parser").find(class_="station_content_description").text for i in soup.findAll('info')][:len(to_lst)]
-    info_lst = [re.sub(r'( | |\t)*', '', i) for i in info_lst]
+    info_lst = [BeautifulSoup(i.text,"html.parser").text for i in soup.findAll('info')][:len(to_lst)]
+    info_lst = [re.sub(r'( | |\t|\u3000)*', '', i) for i in info_lst]
     # join
     comment_lst = [a+b for a,b in zip(comment_lst, info_lst)]
     
