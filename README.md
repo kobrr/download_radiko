@@ -7,9 +7,9 @@ Herokuなどを利用すれば、毎週のスケジュール実行もできま�
 ![file info](https://user-images.githubusercontent.com/58103830/82830715-74aca580-9ef1-11ea-96cc-82976d919241.png)
 
 # How to Use
-&emsp;main(station, title)
-&emsp;station: "station_id_table.ipynb"を参照
-&emsp;title: ラジコ番組表上のタイトル
+&emsp;main(station, title)<br>
+&emsp;station: "station_id_table.ipynb"を参照<br>
+&emsp;title: ラジコ番組表上のタイトル<br>
 
 # Requirement
 ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers<br>
