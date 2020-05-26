@@ -11,7 +11,7 @@ Herokuなどを利用すれば、毎週のスケジュール実行もできま�
 &emsp;station: "station_id_table.ipynb"を参照<br>
 &emsp;title: ラジコ番組表上のタイトル<br>
 
-# Requirement
+# Requirements
 ffmpeg version 4.2.2 Copyright (c) 2000-2019 the FFmpeg developers<br>
 eyeD3==0.9.5<br>
 python==3.7.4<br>
